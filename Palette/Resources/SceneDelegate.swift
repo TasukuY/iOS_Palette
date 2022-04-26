@@ -15,6 +15,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        if let scene = (scene as? UIWindowScene) {
+            let window = UIWindow(windowScene: scene)
+            window.rootViewController = PaletteViewController()
+            self.window = window
+            window.makeKeyAndVisible()
+        }
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
